@@ -50,7 +50,7 @@
 
 | 登录窗口 | 主界面 |
 |:---:|:---:|
-| ![登录](screenshots/login.png) | ![主界面](screenshots/main.png) |
+| ![登录](login.png) | ![主界面](main.png) |
 
 > *注：截图中的背景图 `prts.png` 可自行替换，程序会自动缩放至 30% 并居中显示。*
 
