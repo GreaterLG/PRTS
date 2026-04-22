@@ -1,4 +1,4 @@
-# 🔧 PRTS
+# 🔧 PRTS 系统工具箱
 
 <p align="center">
   <img src="prtscl.ico" alt="PRTS Icon" width="80"/>
@@ -138,4 +138,4 @@ v1.0.0 (2026-04-01)
 📄 许可证
 本项目基于 MIT License 开源，您可自由使用、修改和分发。
 
-<p align="center">Made with ❤️ by 牧歌 </p>```
+<p align="center">Made with ❤️ by 牧歌</p> ```
