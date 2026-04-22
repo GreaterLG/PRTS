@@ -74,7 +74,7 @@ cd PRTS
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
+python main.py```
 服务器端部署请参考项目 Wiki 中的 服务端部署指南（需自行配置阿里云 CentOS 宝塔环境及 MySQL 数据库）。
 
 📦 打包为单文件 EXE
