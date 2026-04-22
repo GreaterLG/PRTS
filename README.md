@@ -74,7 +74,8 @@ cd PRTS
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-python main.py```
+python main.py
+```
 服务器端部署请参考项目 Wiki 中的 服务端部署指南（需自行配置阿里云 CentOS 宝塔环境及 MySQL 数据库）。
 
 📦 打包为单文件 EXE
@@ -93,7 +94,8 @@ pyinstaller --onefile --windowed --name PRTS --icon=prtscl.ico ^
     --add-data ".venv\Lib\site-packages\websocket;websocket" ^
     --hidden-import hmac --hidden-import hashlib --hidden-import socket ^
     --hidden-import ssl --hidden-import http --hidden-import email ^
-    --hidden-import PyQt5.sip main.py```
+    --hidden-import PyQt5.sip main.py
+```
 🗂️ 项目结构
 ```text
 PRTS/
@@ -109,7 +111,8 @@ PRTS/
 ├── prtscl.ico              # 程序图标（已内置）
 ├── login.png               # 登录界面截图
 ├── main.png                # 主界面截图
-└── README.md               # 本文件```
+└── README.md               # 本文件
+```
 🛠️ 技术栈
 模块	技术选型
 GUI 框架	PyQt5 + QSS 样式表
