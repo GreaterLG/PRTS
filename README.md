@@ -1,4 +1,4 @@
-# 🔧 PRTS 系统工具箱
+# 🔧 PRTS
 
 <p align="center">
   <img src="prtscl.ico" alt="PRTS Icon" width="80"/>
@@ -74,7 +74,7 @@ cd PRTS
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
+python main.py```
 服务器端部署请参考项目 Wiki 中的 服务端部署指南（需自行配置阿里云 CentOS 宝塔环境及 MySQL 数据库）。
 
 📦 打包为单文件 EXE
@@ -87,15 +87,15 @@ python main.py
 双击 build.bat 即可在 dist 目录生成 PRTS.exe。
 
 手动打包命令
-bash
+```bash
 pyinstaller --onefile --windowed --name PRTS --icon=prtscl.ico ^
     --add-data "prts.png;." --add-data "prtscl.ico;." ^
     --add-data ".venv\Lib\site-packages\websocket;websocket" ^
     --hidden-import hmac --hidden-import hashlib --hidden-import socket ^
     --hidden-import ssl --hidden-import http --hidden-import email ^
-    --hidden-import PyQt5.sip main.py
+    --hidden-import PyQt5.sip main.py```
 🗂️ 项目结构
-text
+```text
 PRTS/
 ├── main.py                 # 程序入口
 ├── login_window.py         # 登录/注册界面
@@ -109,7 +109,7 @@ PRTS/
 ├── prtscl.ico              # 程序图标（已内置）
 ├── login.png               # 登录界面截图
 ├── main.png                # 主界面截图
-└── README.md               # 本文件
+└── README.md               # 本文件```
 🛠️ 技术栈
 模块	技术选型
 GUI 框架	PyQt5 + QSS 样式表
@@ -138,4 +138,4 @@ v1.0.0 (2026-04-01)
 📄 许可证
 本项目基于 MIT License 开源，您可自由使用、修改和分发。
 
-<p align="center">Made with ❤️ by 牧歌</p> ```
+<p align="center">Made with ❤️ by 牧歌</p> 
