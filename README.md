@@ -1,4 +1,4 @@
-# 🔧 PRTS 系统工具箱
+# 🔧 PRTS
 
 <p align="center">
   <img src="prtscl.ico" alt="PRTS Icon" width="80"/>
@@ -75,3 +75,67 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 python main.py
+服务器端部署请参考项目 Wiki 中的 服务端部署指南（需自行配置阿里云 CentOS 宝塔环境及 MySQL 数据库）。
+
+📦 打包为单文件 EXE
+项目提供了 build.bat 一键打包脚本，使用前请确保：
+
+虚拟环境 .venv 已创建并安装所有依赖
+
+资源文件 prts.png、prtscl.ico 位于项目根目录
+
+双击 build.bat 即可在 dist 目录生成 PRTS.exe。
+
+手动打包命令
+bash
+pyinstaller --onefile --windowed --name PRTS --icon=prtscl.ico ^
+    --add-data "prts.png;." --add-data "prtscl.ico;." ^
+    --add-data ".venv\Lib\site-packages\websocket;websocket" ^
+    --hidden-import hmac --hidden-import hashlib --hidden-import socket ^
+    --hidden-import ssl --hidden-import http --hidden-import email ^
+    --hidden-import PyQt5.sip main.py
+🗂️ 项目结构
+text
+PRTS/
+├── main.py                 # 程序入口
+├── login_window.py         # 登录/注册界面
+├── main_window.py          # 主功能界面
+├── websocket_client.py     # WebSocket 长连接客户端
+├── system_tools.py         # 系统维护与关机函数
+├── utils.py                # 资源路径辅助函数
+├── requirements.txt        # Python 依赖清单
+├── build.bat               # 自动打包脚本
+├── prts.png                # 背景图片（已内置）
+├── prtscl.ico              # 程序图标（已内置）
+├── login.png               # 登录界面截图
+├── main.png                # 主界面截图
+└── README.md               # 本文件
+🛠️ 技术栈
+模块	技术选型
+GUI 框架	PyQt5 + QSS 样式表
+网络通信	websocket-client (长连接)
+数据加密	cryptography (Fernet)
+打包工具	PyInstaller
+服务端中继	Python websockets + aiomysql + MySQL
+📝 更新日志
+v2.0.0 (2026-04-22)
+新增：用户注册/登录体系，支持多设备绑定
+
+新增：远程关机延迟 30 秒倒计时，可中途取消
+
+优化：UI 全面升级为 PyQt5 毛玻璃风格
+
+优化：配置文件迁移至用户目录，解决权限问题
+
+修复：PyInstaller 打包后标准库缺失问题
+
+v1.0.0 (2026-04-01)
+初始版本发布，包含本地维护与基础远程关机
+
+🤝 贡献
+欢迎提交 Issue 和 Pull Request！如果您有任何建议或发现了 bug，请随时联系我们。
+
+📄 许可证
+本项目基于 MIT License 开源，您可自由使用、修改和分发。
+
+<p align="center">Made with ❤️ by 牧歌 </p>
